@@ -64,7 +64,7 @@ async function startServer() {
     await connectToDB();
 
     app.listen(PORT, () => {
-        console.log(`App is running on port ${PORT}`);
+        console.log(`🧟 App is running on port ${PORT} 🧟` );
     });
 }
 

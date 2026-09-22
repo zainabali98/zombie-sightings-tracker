@@ -11,7 +11,20 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-}, {timestamps: true});
+  occupation: {
+    type: String,
+    enum: ['civilian', 'soldier', 'scientist', 'other' ]
+
+  },
+  contact: {
+    phone: String,
+    email: String
+  },
+  reports: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Sighting'
+  }]
+}, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);
 

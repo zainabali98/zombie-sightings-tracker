@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+
+        <h1> Eedit the report carefully! </h1>
+        <Form method="post" action="/reports/<%= sighting._id %>?_method=PUT">
+            <label for="location">Location:</label>
+            <select name="location" id="location">
+                <option value="Manama">Manama</option>
+                                <option value="Muharraq">Muharraq</option>
+                <option value="Riffa">Riffa</option>
+                <option value="Hamad-Town">Hamad Town</option>
+            </select>
+            <br>
+            <label for="status">Status:</label>
+            <select name="status" id="status">
+                <option value="Cleared/Safe">Cleared/Safe</option>
+                <option value="Overrun">Overrun</option>
+                <option value="Under Evaluation">Under Evaluation</option>
+                <option value="Combat Ongoing">Combat Ongoing</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+            <br>
+            <label for="dangerLevel">Danger lvl:</label>
+            <select name="dangerLevel" id="dangerLevel">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="Unknown">Unknown</option>
+
+            </select>
+            <br>
+            <label for="zombieTypes">Zombie Types at sight:</label>
+            <select name="zombieTypes" id="zombieTypes">
+                <option value="Runner">Runner</option>
+                <option value="Stalker">Stalker</option>
+                <option value="Clicker">Clicker</option>
+                <option value="Shambler">Shamblers</option>
+                <option value="Bloater">Bloater</option>
+                <option value="Rat King">Rat King</option>
+                <option value="Unknown">Unknown</option>
+
+            </select>
+            <br>
+            <br>
+            <div>
+                <button name="submit">Submit</button>
+            </div>
+        </Form>
+
+</body>
+
+</html>

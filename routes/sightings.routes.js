@@ -25,6 +25,19 @@ router.get('/:id', async (req, res)=>{
     res.render('sighting-details.ejs', {sighting: foundSighting})
 })
 
+router.get('/:id/edit', isSignedIn, async (req, res)=>{
+    const editedSighting = await Sighting.findById(req.params.id)
+    res.render('edit-sighting.ejs', {sighting: editedSighting})
+})
+
+
+router.put('/:id', isSignedIn, async (req, res) => {
+    await Sighting.findByIdAndUpdate(req.params.id, req.body)
+
+    res.redirect('/reports/' + req.params.id)
+})
+
+
 
 
 

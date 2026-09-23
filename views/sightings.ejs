@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <%- include('./partials/navbar') %>
+
+    <h1>Here you'll find all sighting reports</h1>
+    <p>make a new report <a href="/reports/new">here</a></p>
+
+    <% for(let oneSighting of sightings){%>
+        <p>Location at: <%= oneSighting.location%></p>
+        <a href="/reports/<%= oneSighting._id %>">See All Reports</a>
+    <% }%>
+</body>
+</html> 

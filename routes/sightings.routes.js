@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', isSignedIn, async (req, res) => {
+    req.body.reportOwner = req.session.user._id
     const newSighting = await Sighting.create(req.body)
 
     res.redirect('/reports')
@@ -19,6 +20,14 @@ router.post('/', isSignedIn, async (req, res) => {
 router.get('/new', (req, res) => {
     res.render('new-sightings.ejs')
 })
+
+
+router.get('/my-reports',  isSignedIn, async (req, res) =>{
+    const ownerSighting = await Sighting.find({ reportOwner: req.session.user._id })
+
+    res.render('my-sightings.ejs', {sightings: ownerSighting})
+})
+
 
 router.get('/:id', async (req, res)=>{
     const foundSighting = await Sighting.findById(req.params.id)

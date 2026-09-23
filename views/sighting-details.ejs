@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧟Report Details</title>
+</head>
+<body>
+            <%- include('./partials/navbar') %>
+
+    <h1>The requiested listing details</h1>
+    <p><%= sighting.location %></p>
+    <p><%= sighting.status %></p>
+    <p><%= sighting.dangerLevel %></p>
+    <p><%= sighting.zombieTypes %></p>
+
+    <a href="/reports">back</a>
+
+</body>
+</html>

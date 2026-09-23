@@ -20,7 +20,10 @@ router.get('/new', (req, res) => {
     res.render('new-sightings.ejs')
 })
 
-
+router.get('/:id', async (req, res)=>{
+    const foundSighting = await Sighting.findById(req.params.id)
+    res.render('sighting-details.ejs', {sighting: foundSighting})
+})
 
 
 

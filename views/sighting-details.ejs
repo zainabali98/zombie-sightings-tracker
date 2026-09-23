@@ -14,7 +14,17 @@
     <p><%= sighting.dangerLevel %></p>
     <p><%= sighting.zombieTypes %></p>
     <a href="/reports/<%= sighting._id %>/edit">Edit Report</a>
-
+    <form method="POST" action="/reports/<%= sighting._id %>?_method=DELETE">
+        <br>
+    <button type="submit">Delete</button>
+    <br>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <a href="/reports">back</a>
 
 </body>

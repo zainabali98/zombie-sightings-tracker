@@ -32,13 +32,16 @@ router.get('/:id/edit', isSignedIn, async (req, res)=>{
 
 
 router.put('/:id', isSignedIn, async (req, res) => {
-    await Sighting.findByIdAndUpdate(req.params.id, req.body)
+    const updatedSighting = await Sighting.findByIdAndUpdate(req.params.id, req.body)
 
-    res.redirect('/reports/' + req.params.id)
+   res.render('sighting-details.ejs', { sighting: updatedSighting })
 })
 
 
-
+router.delete('/:id', isSignedIn, async (req, res)=>{
+     await Sighting.findByIdAndDelete(req.params.id)
+    res.redirect('/reports')
+})
 
 
 module.exports = router;

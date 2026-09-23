@@ -22,34 +22,46 @@ router.get('/new', (req, res) => {
 })
 
 
-router.get('/my-reports',  isSignedIn, async (req, res) =>{
+router.get('/my-reports', isSignedIn, async (req, res) => {
     const ownerSighting = await Sighting.find({ reportOwner: req.session.user._id })
 
-    res.render('my-sightings.ejs', {sightings: ownerSighting})
+    res.render('my-sightings.ejs', { sightings: ownerSighting })
 })
 
 
-router.get('/:id', async (req, res)=>{
+router.get('/:id', async (req, res) => {
     const foundSighting = await Sighting.findById(req.params.id)
-    res.render('sighting-details.ejs', {sighting: foundSighting})
+    res.render('sighting-details.ejs', { sighting: foundSighting })
 })
 
-router.get('/:id/edit', isSignedIn, async (req, res)=>{
+router.get('/:id/edit', isSignedIn, async (req, res) => {
     const editedSighting = await Sighting.findById(req.params.id)
-    res.render('edit-sighting.ejs', {sighting: editedSighting})
+    if (editedSighting.reportOwner.equals(req.session.user._id)) {
+        res.render('edit-sighting.ejs', { sighting: editedSighting })
+
+    } else { res.send('You are not authorized to edit') }
 })
 
 
 router.put('/:id', isSignedIn, async (req, res) => {
-    const updatedSighting = await Sighting.findByIdAndUpdate(req.params.id, req.body)
 
-   res.render('sighting-details.ejs', { sighting: updatedSighting })
+    const sightingToUpdate = await Sighting.findById(req.params.id)
+    if (sightingToUpdate.reportOwner.equals(req.session.user._id)) {
+        const updatedSighting = await Sighting.findByIdAndUpdate(req.params.id, req.body)
+
+        res.render('sighting-details.ejs', { sighting: updatedSighting })
+    } else { res.send('You are not authorized to update') }
+
 })
 
 
-router.delete('/:id', isSignedIn, async (req, res)=>{
-     await Sighting.findByIdAndDelete(req.params.id)
-    res.redirect('/reports')
+router.delete('/:id', isSignedIn, async (req, res) => {
+    const sightingToDelete = await Sighting.findById(req.params.id)
+
+    if (sightingToDelete.reportOwner.equals(req.session.user._id)) {
+      await Sighting.findByIdAndDelete(req.params.id)
+        res.redirect('/reports')
+    } else { res.send('You are not authorized to delete') }
 })
 
 

@@ -16,7 +16,11 @@
     <a href="/reports/<%= sighting._id %>/edit">Edit Report</a>
     <form method="POST" action="/reports/<%= sighting._id %>?_method=DELETE">
         <br>
-    <button type="submit">Delete</button>
+
+        <% if(user && sighting.reportOwner.equals(req.session.user._id)){ %>
+                <button type="submit">Delete</button>
+        <%} %>
+       
     <br>
 </form>
 <br>

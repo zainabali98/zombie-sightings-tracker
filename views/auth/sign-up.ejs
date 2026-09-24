@@ -14,9 +14,9 @@
 
     <div class="signup-content">
 
-      <h1>Create a new account!</h1>
-      <form action="/auth/sign-up" method="post">
-        <div>
+      <h1 class="signup-title">Create a new account!</h1>
+      <form class="signup-form" action="/auth/sign-up" method="post">
+        <div class="signup-account-fields">
           <label for="username">Username:</label>
           <input type="text" name="username" id="username" />
           <label for="password">Password:</label>
@@ -26,7 +26,7 @@
 
         </div>
         <br>
-        <div>
+        <div class="signup-occupation">
           <label for="occupation">Occupation:</label>
           <select name="occupation" id="occupation">
             <option value="civilian">Civilian</option>
@@ -35,15 +35,13 @@
             <option value="other">Other</option>
           </select>
         </div>
-        <div>
-          <p>Contact Information</p>
+        <div class="signup-contact">
+          <p class="signup-contact-title">Contact Information</p>
           <label for="phone">Phone:</label>
           <input type="phone" name="contact[phone]" id="phone">
           <label for="email">Email:</label>
           <input type="email" name="contact[email]" id="email">
         </div>
-        <br>
-        <br>
         <button type="submit">Sign up</button>
       </form>
     </div>

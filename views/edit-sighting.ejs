@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧟 Update Report</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
             <label for="location">Location:</label>
             <select name="location" id="location">
                 <option value="Manama">Manama</option>
-                                <option value="Muharraq">Muharraq</option>
+                <option value="Muharraq">Muharraq</option>
                 <option value="Riffa">Riffa</option>
                 <option value="Hamad-Town">Hamad Town</option>
             </select>
@@ -55,10 +56,13 @@
             <br>
             <br>
             <div>
-                <button name="submit">Submit</button>
+                <% if(user && sighting.reportOwner.equals(req.session.user._id)){ %>
+                    <button name="submit">Submit</button>
+                    <%} %>
+
             </div>
         </Form>
 
-</body>
+</body> 
 
 </html>

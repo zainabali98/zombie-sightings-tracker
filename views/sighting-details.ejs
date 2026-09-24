@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧟Report Details</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-            <%- include('./partials/navbar') %>
+    <%- include('./partials/navbar') %>
 
-    <h1>The requiested listing details</h1>
-    <p><%= sighting.location %></p>
-    <p><%= sighting.status %></p>
-    <p><%= sighting.dangerLevel %></p>
-    <p><%= sighting.zombieTypes %></p>
-    <a href="/reports/<%= sighting._id %>/edit">Edit Report</a>
-    <form method="POST" action="/reports/<%= sighting._id %>?_method=DELETE">
-        <br>
+        <h1>The requiested listing details</h1>
+        <p><%= sighting.location %></p>
+        <p><%= sighting.status %></p>
+        <p><%= sighting.dangerLevel %></p>
+        <p><%= sighting.zombieTypes %></p>
 
-        <% if(user && sighting.reportOwner.equals(req.session.user._id)){ %>
+        <a href="/reports/<%= sighting._id %>/edit">Edit Report</a>
+
+        <form method="POST" action="/reports/<%= sighting._id %>?_method=DELETE">
+            <br>
+
+            <% if(user && sighting.reportOwner.equals(user._id)){ %>
                 <button type="submit">Delete</button>
-        <%} %>
-       
-    <br>
-</form>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <a href="/reports">back</a>
+                <%} %>
+
+                    <br>
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="/reports">back</a>
 
 </body>
+
 </html>

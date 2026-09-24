@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 🧟 Zombie Sightings Tracker</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+
+<body class="homepage" class="londrina-shadow-regular">
     <%- include('./partials/navbar') %>
 
-<h1>
-    ZOMBIE<br>
-    SIGHTINGS<br>
-    TRACKER
-</h1>
+        <div class="content">
+            <h1>
+                ZOMBIE<br>
+                SIGHTINGS<br>
+                TRACKER
+            </h1>
 
-<p>
-Track infected activity across Bahrain.
-Submit reports, identify danger zones,
-and help survivors stay informed.
-</p>
+            <p>
+                Track infected activity across Bahrain.
+                Submit reports, identify <br>danger zones,
+                and help survivors stay informed.
+            </p>
+            <br>
 
-<div class="buttons">
-    <a href="/locations" class="primary-btn">View Locations</a>
-    <a href="/reports/new" class="secondary-btn">Report Sighting</a>
-</div>
+            <div class="buttons">
+                <a href="/locations" class="primary-btn">View Locations</a>
+                <a href="/reports/new" class="secondary-btn">Report a Sighting</a>
+            </div>
+        </div>
 </body>
-</html>
 
+</html>

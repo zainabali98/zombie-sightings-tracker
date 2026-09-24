@@ -1,13 +1,13 @@
-.navbar{
+.navbar {
     position: relative;
     width: 800px;
     height: 70px;
-    background: gray;
+    background: #394324;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
 }
 
@@ -28,7 +28,9 @@
 }
 
 @keyframes wave {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -43,4 +45,44 @@
     75% {
         transform: translateY(8px);
     }
+}
+
+
+
+.homepage {
+    position: relative;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("/images/cover1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.homepage h1{
+    color: aliceblue;
+}
+.homepage p {
+    color: white;
+}
+.buttons a {
+    background: #394324;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin-top: 30px;
+    margin-bottom: 10px 5px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.buttons a:hover {
+    color: black;
+}
+
+.content{
+    margin-top: 200px;
+    margin-left: 50px;
 }

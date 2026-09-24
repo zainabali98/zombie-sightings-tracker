@@ -2,7 +2,7 @@
     position: relative;
     width: 800px;
     height: 70px;
-    background: #394324;
+    background: #707172;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,8 +52,8 @@
 .homepage {
     position: relative;
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/cover1.jpg");
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+        url("/images/cover3.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,12 +63,17 @@
 
 .homepage h1{
     color: aliceblue;
+    margin-left: 150px;
+    margin-bottom: 100px;
+    margin-top: 0px;
 }
 .homepage p {
     color: white;
 }
+
+
 .buttons a {
-    background: #394324;
+    background: #707172;
     color: white;
     text-decoration: none;
     padding: 12px 20px;
@@ -83,6 +88,6 @@
 }
 
 .content{
-    margin-top: 200px;
+    margin-top: 120px;
     margin-left: 50px;
 }

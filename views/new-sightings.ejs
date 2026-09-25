@@ -8,57 +8,65 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="new-report-page">
     <%- include('./partials/navbar') %>
 
-        <h1>Report a sighting</h1>
-        <Form method="post" action="/reports">
-            <label for="location">Location:</label>
-            <select name="location" id="location">
-                <option value="Manama">Manama</option>
-                <option value="Muharraq">Muharraq</option>
-                <option value="Riffa">Riffa</option>
-                <option value="Hamad Town">Hamad Town</option>
-            </select>
-            <br>
-            <label for="status">Status:</label>
-            <select name="status" id="status">
-                <option value="Cleared/Safe">Cleared/Safe</option>
-                <option value="Overrun">Overrun</option>
-                <option value="Under Evaluation">Under Evaluation</option>
-                <option value="Combat Ongoing">Combat Ongoing</option>
-                <option value="Unknown">Unknown</option>
-            </select>
-            <br>
-            <label for="dangerLevel">Danger lvl:</label>
-            <select name="dangerLevel" id="dangerLevel">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="Unknow">Unknown</option>
+        <div class="new-report-content">
+            <h1 class="new-report-title">Report a sighting</h1>
 
-            </select>
-            <br>
-            <label for="zombieTypes">Zombie Types at sight:</label>
-            <select name="zombieTypes" id="zombieTypes">
-                <option value="Runner">Runner</option>
-                <option value="Stalker">Stalker</option>
-                <option value="Clicker">Clicker</option>
-                <option value="Shambler">Shamblers</option>
-                <option value="Bloater">Bloater</option>
-                <option value="Rat King">Rat King</option>
-                <option value="Unknown">Unknown</option>
+            <form class="new-report-form" method="post" action="/reports">
 
-            </select>
-            <br>
-            <br>
-            <div>
-                <button name="submit">Submit</button>
-            </div>
-        </Form>
+                <div class="new-report-main-fields">
+                    <label for="location">Location:</label>
+                    <select name="location" id="location">
+                        <option value="Manama">Manama</option>
+                        <option value="Muharraq">Muharraq</option>
+                        <option value="Riffa">Riffa</option>
+                        <option value="Hamad Town">Hamad Town</option>
+                    </select>
+
+                    <label for="status">Status:</label>
+                    <select name="status" id="status">
+                        <option value="Cleared/Safe">Cleared/Safe</option>
+                        <option value="Overrun">Overrun</option>
+                        <option value="Under Evaluation">Under Evaluation</option>
+                        <option value="Combat Ongoing">Combat Ongoing</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+                    <label for="dangerLevel">Danger lvl:</label>
+                    <select name="dangerLevel" id="dangerLevel">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="Unknow">Unknown</option>
+
+                    </select>
+
+                    <label for="zombieTypes">Zombie Types at sight:</label>
+                    <select name="zombieTypes" id="zombieTypes">
+                        <option value="Runner">Runner</option>
+                        <option value="Stalker">Stalker</option>
+                        <option value="Clicker">Clicker</option>
+                        <option value="Shambler">Shamblers</option>
+                        <option value="Bloater">Bloater</option>
+                        <option value="Rat King">Rat King</option>
+                        <option value="Unknown">Unknown</option>
+
+                    </select>
+                </div>
+                <div class="new-report-description">
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description" rows="5"
+                        placeholder="Describe the sighting..."></textarea>
+                </div>
+                <div class="new-report-buttons">
+                    <button name="submit">Submit</button>
+                </div>
+            </form>
+        </div>
 
 </body>
 

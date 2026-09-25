@@ -18,6 +18,7 @@ const authController = require("./routes/auth.routes.js");
 const indexController = require("./routes/index.routes.js");
 const sightingsRouter = require('./routes/sighting.routes.js');
 const locationRouter = require('./routes/location.routes.js');
+const zombieRouter = require('./routes/zombies.routes.js');
 
 
 // Middleware
@@ -58,6 +59,7 @@ app.use('/auth',authController)
 app.use('/',indexController)
 app.use('/reports', sightingsRouter )
 app.use('/locations', locationRouter)
+app.use('/zombies', zombieRouter)
 
 
 

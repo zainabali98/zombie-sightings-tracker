@@ -1,4 +1,5 @@
 const router = require("express").Router()
+const { get } = require("mongoose")
 const isSignedIn = require("../../../lectures/unit-two/open-house/middleware/is-signed-in")
 const Sighting = require('../models/Sightings')
 

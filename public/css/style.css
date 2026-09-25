@@ -373,3 +373,170 @@ font-size: 1rem;
     color: maroon;
     border-color: maroon;
 }
+
+
+
+/* =========================
+   ZOMBIES PAGE
+   ========================= */
+
+.zombies-page {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+        url("/images/cover3.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.zombies-page .cards {
+    width: 90%;
+    height: 67vh;
+    margin: 60px auto;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Individual cards */
+
+.zombies-page .cards > div {
+    flex: 0 0 110px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(20, 20, 20, 0.7);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 25px;
+    box-sizing: border-box;
+
+    transition:
+        flex-basis 0.6s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.zombies-page .cards .rat-king-card {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
+        url("/images/Rat_King_model.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+.zombies-page .cards .shambler-card {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
+        url("/images/shambler.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.zombies-page .cards .bloater-card {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
+        url("/images/bloater.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+.zombies-page .cards .runner-card {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
+        url("/images/Runner_models.webp");
+    background-size: cover;
+    background-position: center;
+}
+.zombies-page .cards .stalker-card {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
+        url("/images/Stalker_models.webp");
+    background-size: cover;
+    background-position: center;
+}
+.zombies-page .cards .clicker-card {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
+        url("/images/clicker1.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* The magic */
+
+.zombies-page .cards > div:hover {
+    flex-basis: 380px;
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* Zombie name */
+
+.zombies-page .cards h2 {
+    margin: 0 0 15px;
+    font-size: 2rem;
+    color: white;
+}
+
+/* Description */
+
+.zombies-page .cards p {
+    margin: 0 0 15px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Danger level */
+
+.zombies-page .danger-level {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.zombies-page .danger-level span {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.zombies-page .danger-level strong {
+    font-size: 2rem;
+    color: maroon;
+}
+
+/* Scrollbar */
+
+.zombies-page .cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+.zombies-page .cards::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.zombies-page .cards h2,
+.zombies-page .cards p,
+.zombies-page .cards .danger-level {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+.zombies-page .cards > div:hover h2,
+.zombies-page .cards > div:hover p,
+.zombies-page .cards > div:hover .danger-level {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -809,3 +809,217 @@ body.zones {
     color: maroon;
     border-color: maroon;
 }
+
+/* Report Details Page */
+
+body.report-details-page {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
+        url("/images/cover1.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.report-details-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 45px 20px 60px;
+    box-sizing: border-box;
+}
+
+.report-details-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0 0 30px;
+}
+
+.report-details-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.report-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.report-detail:last-of-type {
+    border-bottom: none;
+}
+
+.report-detail-label {
+    font-weight: 600;
+    color: #555555;
+}
+
+.report-detail-value {
+    color: #1a1a1a;
+    text-align: right;
+}
+
+.report-details-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.report-details-actions a,
+.report-details-actions button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.report-edit-button {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.report-edit-button:hover {
+    background: #333333;
+}
+
+.report-delete-button {
+    background: #e8e8e8;
+    color: #222222;
+}
+
+.report-delete-button:hover {
+    background: #d8d8d8;
+}
+
+.report-back-button {
+    background: #f3f3f3;
+    color: #222222;
+}
+
+.report-back-button:hover {
+    background: #e5e5e5;
+}
+
+.report-details-actions form {
+    margin: 0;
+}
+
+
+/* All Reports Page */
+
+body.all-reports-page {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
+        url("/images/cover1.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.all-reports-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 45px 20px 60px;
+    box-sizing: border-box;
+}
+
+.all-reports-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0 0 12px;
+}
+
+.all-reports-intro {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 30px;
+}
+
+.new-report-link {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.reports-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.report-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 22px;
+    padding: 22px 25px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.report-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.report-card-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #777777;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.report-card-location {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.report-details-button {
+    flex-shrink: 0;
+    background: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 11px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.report-details-button:hover {
+    background: #333333;
+}
+
+.report-details-button:active {
+    transform: scale(0.98);
+}
+.zone-reports-title {
+    color: #ffffff;
+    text-align: center;
+    margin: 35px 0 20px;
+}

@@ -8,33 +8,60 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="report-details-page">
     <%- include('./partials/navbar') %>
 
-        <h1>The requiested report details</h1>
-        <p><%= sighting.location %></p>
-        <p><%= sighting.status %></p>
-        <p><%= sighting.dangerLevel %></p>
-        <p><%= sighting.zombieTypes %></p>
+    <main class="report-details-container">
 
-        <a href="/reports/<%= sighting._id %>/edit">Edit Report</a>
+        <h1 class="report-details-title">Report Details</h1>
 
-        <form method="POST" action="/reports/<%= sighting._id %>?_method=DELETE">
-            <br>
+        <div class="report-details-card">
 
-            <% if(user && sighting.reportOwner.equals(user._id)){ %>
-                <button type="submit">Delete</button>
-                <%} %>
+            <div class="report-detail">
+                <span class="report-detail-label">Location</span>
+                <span class="report-detail-value"><%= sighting.location %></span>
+            </div>
 
-                    <br>
-        </form>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <a href="/reports">back</a>
+            <div class="report-detail">
+                <span class="report-detail-label">Status</span>
+                <span class="report-detail-value"><%= sighting.status %></span>
+            </div>
+
+            <div class="report-detail">
+                <span class="report-detail-label">Danger Level</span>
+                <span class="report-detail-value"><%= sighting.dangerLevel %></span>
+            </div>
+
+            <div class="report-detail">
+                <span class="report-detail-label">Zombie Type</span>
+                <span class="report-detail-value"><%= sighting.zombieTypes %></span>
+            </div>
+
+            <div class="report-details-actions">
+
+                <% if(user && sighting.reportOwner.equals(user._id)){ %>
+
+                    <a class="report-edit-button" href="/reports/<%= sighting._id %>/edit">
+                        Edit Report
+                    </a>
+
+                    <form method="POST" action="/reports/<%= sighting._id %>?_method=DELETE">
+                        <button class="report-delete-button" type="submit">
+                            Delete Report
+                        </button>
+                    </form>
+
+                <% } %>
+
+                <a class="report-back-button" href="/reports">
+                    Back to Reports
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
 
 </body>
 

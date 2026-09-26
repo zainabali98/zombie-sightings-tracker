@@ -24,16 +24,14 @@ router.get('/seed', async (req, res) => {
 
 router.get('/:zone', async (req, res) => {
 
-  const foundLocation = await Location.findOne({ zone: req.params.zone })
-  console.log(foundLocation)
+    const foundLocation = await Location.findOne({ zone: req.params.zone })
 
-  const sightings = await Sighting.find({ location: foundLocation._id })
+    const sightings = await Sighting.find({ location: foundLocation._id })
 
-  res.render('location-details.ejs', {
-location: foundLocation,
-    sightings: sightings
-  })
-
+    res.render('location-details.ejs', {
+        location: foundLocation,
+        sightings: sightings
+    })
 })
 
 

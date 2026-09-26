@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧟 Details</title>
+    <title>🧟 <%= location.zone %> Reports</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <h1>Zone Details</h1>
 
+<body class="report-details-page">
 
+    <%- include('./partials/navbar') %>
+
+    <main class="report-details-container">
+
+        <h1 class="report-details-title">
+            <%= location.zone %>
+        </h1>
+
+        <div class="report-details-card">
+
+            <div class="report-detail">
+                <span class="report-detail-label">Zone Status</span>
+                <span class="report-detail-value">status here</span>
+            </div>
+
+            <div class="report-detail">
+                <span class="report-detail-label">Total Reports</span>
+                <span class="report-detail-value"><%= sightings.length %></span>
+            </div>
+
+        </div>
+
+        <h2 class="zone-reports-title">Sighting Reports</h2>
+
+        <div class="reports-list">
+
+            <% for (let oneSighting of sightings) { %>
+
+                <div class="report-card">
+
+                    <div class="report-card-info">
+
+                        <span class="report-card-label">Zombie Type</span>
+
+                        <span class="report-card-location">
+                            <%= oneSighting.zombieTypes %>
+                        </span>
+
+                        <span class="report-card-label">Danger Level</span>
+
+                        <span class="report-card-location">
+                            <%= oneSighting.dangerLevel %>
+                        </span>
+
+                    </div>
+
+                    <a class="report-details-button"
+                        href="/reports/<%= oneSighting._id %>">
+                        View Report
+                    </a>
+
+                </div>
+
+            <% } %>
+
+        </div>
+
+        <a class="report-back-button zone-back-button" href="/locations">
+            Back to Zones
+        </a>
+
+    </main>
 
 </body>
+
 </html>

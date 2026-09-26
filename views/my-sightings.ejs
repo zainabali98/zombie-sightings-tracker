@@ -8,18 +8,45 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="all-reports-page">
+
     <%- include('./partials/navbar') %>
 
-        <h1>My Reports!</h1>
+    <main class="all-reports-container">
 
+        <h1 class="all-reports-title">My Reports</h1>
 
-        <% for(let oneSighting of sightings){%>
-            <p>Location at: <%= oneSighting.location%></p>
-            <p>Location at: <%= oneSighting.zombieTypes%></p>
-         
+        <div class="reports-list">
 
-            <% }%>
+            <% for(let oneSighting of sightings){ %>
+
+                <div class="report-card">
+
+                    <div class="report-card-info">
+                        <span class="report-card-label">Location</span>
+                        <span class="report-card-location">
+                            <%= oneSighting.location %>
+                        </span>
+
+                        <span class="report-card-label">Zombie Type</span>
+                        <span class="report-card-location">
+                            <%= oneSighting.zombieTypes %>
+                        </span>
+                    </div>
+
+                    <a class="report-details-button"
+                        href="/reports/<%= oneSighting._id %>">
+                        Report Details
+                    </a>
+
+                </div>
+
+            <% } %>
+
+        </div>
+
+    </main>
+
 </body>
 
 </html>

@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧟 All Reports</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-        <%- include('./partials/navbar') %>
 
-    <h1>Here you'll find all sighting reports</h1>
-    <p>make a new report <a class="wave" href="/reports/new">here</a></p>
+<body class="all-reports-page">
 
-    <% for(let oneSighting of sightings){%>
-        <p>Location at: <%= oneSighting.location%></p>
-        <a href="/reports/<%= oneSighting._id %>">Report Details</a>
-    <% }%>
+    <%- include('./partials/navbar') %>
+
+    <main class="all-reports-container">
+
+        <h1 class="all-reports-title">All Sighting Reports</h1>
+
+        <p class="all-reports-intro">
+            Make a new report
+            <a class="wave new-report-link" href="/reports/new">here</a>
+        </p>
+
+        <div class="reports-list">
+
+            <% for(let oneSighting of sightings){ %>
+
+                <div class="report-card">
+
+                    <div class="report-card-info">
+                        <span class="report-card-label">Location</span>
+                        <span class="report-card-location">
+                            <%= oneSighting.location %>
+                        </span>
+                    </div>
+
+                    <a class="report-details-button"
+                        href="/reports/<%= oneSighting._id %>">
+                        Report Details
+                    </a>
+
+                </div>
+
+            <% } %>
+
+        </div>
+
+    </main>
+
 </body>
-</html> 
+
+</html>

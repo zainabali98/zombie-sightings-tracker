@@ -45,22 +45,49 @@
 
                     </select>
 
-                    <label for="zombieTypes">Zombie Types at sight:</label>
-                    <select name="zombieTypes" id="zombieTypes">
-                        <option value="Runner">Runner</option>
-                        <option value="Stalker">Stalker</option>
-                        <option value="Clicker">Clicker</option>
-                        <option value="Shambler">Shamblers</option>
-                        <option value="Bloater">Bloater</option>
-                        <option value="Rat King">Rat King</option>
-                        <option value="Unknown">Unknown</option>
+                    <label>Zombie Types at sight:</label>
 
-                    </select>
+                    <div class="zombie-types">
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Runner">
+                            Runner
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Stalker">
+                            Stalker
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Clicker">
+                            Clicker
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Shambler">
+                            Shambler
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Bloater">
+                            Bloater
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Rat King">
+                            Rat King
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Unknown">
+                            Unknown
+                        </label>
+                    </div>
                 </div>
                 <div class="new-report-description">
                     <label for="description">Description:</label>
                     <textarea name="description" id="description" rows="5"
-                        placeholder="Describe the sighting..."></textarea>
+                        placeholder="Describe the sighting in concise words..."></textarea>
                 </div>
                 <div class="new-report-buttons">
                     <button name="submit">Submit</button>

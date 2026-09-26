@@ -2,21 +2,13 @@ const mongoose = require('mongoose')
 
 
 const locationSchema = new mongoose.Schema({
-    name: {
-        type: String
-    },
-    city: {
-        type: String
-    },
-    country: {
-        type: String
+    zone: {
+        type: String,
+        enum: ['Muharraq', 'Manama', 'Northern', 'Southern']
     },
     infectionLevel: {
         type: Number
     },
-    status: {
-        type: String
-    }
 }, { timestamps: true })
 
 

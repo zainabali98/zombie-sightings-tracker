@@ -2,6 +2,7 @@ const router = require("express").Router()
 const { get } = require("mongoose")
 const isSignedIn = require("../../../lectures/unit-two/open-house/middleware/is-signed-in")
 const Sighting = require('../models/Sightings')
+const Location = require('../models/Locations')
 
 
 router.get('/', async (req, res) => {
@@ -13,6 +14,15 @@ router.get('/', async (req, res) => {
 
 router.post('/', isSignedIn, async (req, res) => {
     req.body.reportOwner = req.session.user._id
+
+    console.log("Selected zone:", req.body.location)
+
+    const location = await Location.findOne({ zone: req.body.location })
+
+    console.log("Found location:", location)
+
+    req.body.location = location._id
+
     const newSighting = await Sighting.create(req.body)
 
     res.redirect('/reports')
@@ -60,7 +70,7 @@ router.delete('/:id', isSignedIn, async (req, res) => {
     const sightingToDelete = await Sighting.findById(req.params.id)
 
     if (sightingToDelete.reportOwner.equals(req.session.user._id)) {
-      await Sighting.findByIdAndDelete(req.params.id)
+        await Sighting.findByIdAndDelete(req.params.id)
         res.redirect('/reports')
     } else { res.send('You are not authorized to delete') }
 })

@@ -13,12 +13,12 @@
 
         <h1> Eedit the report carefully! </h1>
         <Form method="post" action="/reports/<%= sighting._id %>?_method=PUT">
-            <label for="location">Location:</label>
+            <label for="location">Zones:</label>
             <select name="location" id="location">
                 <option value="Manama">Manama</option>
                 <option value="Muharraq">Muharraq</option>
-                <option value="Riffa">Riffa</option>
-                <option value="Hamad-Town">Hamad Town</option>
+                <option value="Northern">Northern</option>
+                <option value="Southern">Southern</option>
             </select>
             <br>
             <label for="status">Status:</label>
@@ -56,7 +56,7 @@
             <br>
             <br>
             <div>
-                <% if(user && sighting.reportOwner.equals(req.session.user._id)){ %>
+                <% if(user && sighting.reportOwner.equals(user._id)){ %>
                     <button name="submit">Submit</button>
                     <%} %>
 

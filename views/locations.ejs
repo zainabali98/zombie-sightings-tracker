@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧟 Locations</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-        <%- include('./partials/navbar') %>
 
-    <h1>All Zones</h1>
-    <a href="/locations/location._id">Manama</a>
-    <a href="/locations/location._id">Muharraq</a>
-    <a href="/locations/location._id">Northern</a>
-    <a href="/locations/location._id">Southern</a>
-  
+<body class="zones">
+    <%- include('./partials/navbar') %>
+
+    <h1 class="zones-title">All Zones</h1>
+
+    <div class="zones-content">
+
+        <div class="zone-card zones-first-card">
+            <h2 class="zone-name">Manama</h2>
+            <p>status here</p>
+            <a href="/locations/Manama">Stay Informed</a>
+        </div>
+
+        <div class="zone-card zones-second-card">
+            <h2 class="zone-name">Muharraq</h2>
+            <p>status here</p>
+            <a href="/locations/Muharraq">Stay Informed</a>
+        </div>
+
+        <div class="zone-card zones-third-card">
+            <h2 class="zone-name">Northern</h2>
+            <p>status here</p>
+            <a href="/locations/Northern">Stay Informed</a>
+        </div>
+
+        <div class="zone-card zones-fourth-card">
+            <h2 class="zone-name">Southern</h2>
+            <p>status here</p>
+            <a href="/locations/Southern">Stay Informed</a>
+        </div>
+
+    </div>
 </body>
+
 </html>

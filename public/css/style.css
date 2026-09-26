@@ -149,7 +149,7 @@
 }
 
 .signup-form {
-      width: 50%;
+    width: 50%;
     margin: 40px auto;
     color: white;
 }
@@ -161,14 +161,14 @@
     border-radius: 8px;
     padding: 10px;
     width: 100%;
-box-sizing: border-box;
-margin-bottom: 15px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 .signup-form label {
     color: white;
     font-size: 1rem;
-     display: block;
+    display: block;
     margin-bottom: 8px;
 }
 
@@ -179,9 +179,9 @@ margin-bottom: 15px;
     border-radius: 8px;
     padding: 10px;
     width: 100%;
-box-sizing: border-box;
-margin-bottom: 15px;
-font-size: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 1rem;
 }
 
 .signup-form button {
@@ -431,11 +431,12 @@ font-size: 1rem;
     overflow-y: hidden;
     padding: 20px;
     box-sizing: border-box;
+    
 }
 
 /* Individual cards */
 
-.zombies-page .cards > div {
+.zombies-page .cards>div {
     flex: 0 0 110px;
     height: 100%;
     position: relative;
@@ -473,6 +474,7 @@ font-size: 1rem;
     background-size: cover;
     background-position: center;
 }
+
 .zombies-page .cards .bloater-card {
     background:
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
@@ -480,6 +482,7 @@ font-size: 1rem;
     background-size: cover;
     background-position: center;
 }
+
 .zombies-page .cards .runner-card {
     background:
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
@@ -487,6 +490,7 @@ font-size: 1rem;
     background-size: cover;
     background-position: center;
 }
+
 .zombies-page .cards .stalker-card {
     background:
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
@@ -494,6 +498,7 @@ font-size: 1rem;
     background-size: cover;
     background-position: center;
 }
+
 .zombies-page .cards .clicker-card {
     background:
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)),
@@ -505,7 +510,7 @@ font-size: 1rem;
 
 /* The magic */
 
-.zombies-page .cards > div:hover {
+.zombies-page .cards>div:hover {
     flex-basis: 380px;
     transform: translateY(-8px);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
@@ -564,9 +569,159 @@ font-size: 1rem;
     transform: translateY(20px);
     transition: all 0.4s ease;
 }
-.zombies-page .cards > div:hover h2,
-.zombies-page .cards > div:hover p,
-.zombies-page .cards > div:hover .danger-level {
+
+.zombies-page .cards>div:hover h2,
+.zombies-page .cards>div:hover p,
+.zombies-page .cards>div:hover .danger-level {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/* Zones Page Setup */
+body.zones {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        url("/images/cover1.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.zones-title {
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Container Grid for Cards */
+.zones-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Base Card Style */
+.zones-first-card,
+.zones-second-card,
+.zones-third-card,
+.zones-fourth-card {
+    position: relative;
+    height: 440px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zones-first-card:hover,
+.zones-second-card:hover,
+.zones-third-card:hover,
+.zones-fourth-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark Gradient Overlay for readability */
+.zones-first-card::before,
+.zones-second-card::before,
+.zones-third-card::before,
+.zones-fourth-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 30%,
+            rgba(0, 0, 0, 0.75) 70%,
+            rgba(0, 0, 0, 0.95) 100%);
+    z-index: 1;
+}
+
+/* Ensure card content stays above gradient */
+.zones-first-card>*,
+.zones-second-card>*,
+.zones-third-card>*,
+.zones-fourth-card>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Card Description/Status */
+.zones-first-card p,
+.zones-second-card p,
+.zones-third-card p,
+.zones-fourth-card p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+}
+
+
+
+/* Distinct Card Background Images */
+.zones-first-card {
+    background-image: url('/images/Manama.jpg');
+}
+
+.zones-second-card {
+    background-image: url('/images/Muharraq.jpg');
+}
+
+.zones-third-card {
+    background-image: url('/images/Northern.jpg');
+}
+
+.zones-fourth-card {
+    background-image: url('/images/southern.jpg');
+}
+
+.zone-name {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.zone-button {
+    background-color: #ffffff;
+    color: #111111;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 12px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-sizing: border-box;
+}
+
+.zone-button:hover {
+    background-color: #f0f0f0;
+}
+
+.zone-button:active {
+    transform: scale(0.98);
 }

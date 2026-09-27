@@ -6,7 +6,7 @@ const Location = require('../models/Locations')
 
 
 router.get('/', async (req, res) => {
-    const sightings = await Sighting.find()
+    const sightings = await Sighting.find().populate('location')
 
     res.render('sightings.ejs', { sightings })
 })

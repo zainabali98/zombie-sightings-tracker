@@ -11,57 +11,66 @@
 <body class="report-details-page">
     <%- include('./partials/navbar') %>
 
-    <main class="report-details-container">
+        <main class="report-details-container">
 
-        <h1 class="report-details-title">Report Details</h1>
+            <h1 class="report-details-title">Report Details</h1>
 
-        <div class="report-details-card">
 
-            <div class="report-detail">
-                <span class="report-detail-label">Location</span>
-                <span class="report-detail-value"><%= sighting.location %></span>
+            <div class="report-details-card">
+
+                <div class="report-detail">
+                    <span class="report-detail-label">Zone</span>
+                    <span class="report-detail-value">
+                        <%= sighting.location.zone %>
+                    </span>
+                </div>
+
+                <div class="report-detail">
+                    <span class="report-detail-label">Specific Location</span>
+                    <span class="report-detail-value">
+                        <%= sighting.specificLocation %>
+                    </span>
+                </div>
+
+                <div class="report-detail">
+                    <span class="report-detail-label">Danger Level</span>
+                    <span class="report-detail-value">
+                        <%= sighting.dangerLevel %>
+                    </span>
+                </div>
+
+                <div class="report-detail">
+                    <span class="report-detail-label">Zombie Type</span>
+                    <span class="report-detail-value">
+                        <%= sighting.zombieTypes %>
+                    </span>
+                </div>
+
+                <div class="report-details-actions">
+
+                    <% if(user && sighting.reportOwner.equals(user._id)){ %>
+
+                        <a class="report-edit-button" href="/reports/<%= sighting._id %>/edit">
+                            Edit Report
+                        </a>
+
+                        <form method="POST" action="/reports/<%= sighting._id %>?_method=DELETE">
+                            <button class="report-delete-button" type="submit">
+                                Delete Report
+                            </button>
+                        </form>
+
+                        <% } %>
+
+                            <a class="report-back-button" href="/reports">
+                                Back to Reports
+                            </a>
+
+                </div>
+
             </div>
 
-            <div class="report-detail">
-                <span class="report-detail-label">Status</span>
-                <span class="report-detail-value"><%= sighting.status %></span>
-            </div>
-
-            <div class="report-detail">
-                <span class="report-detail-label">Danger Level</span>
-                <span class="report-detail-value"><%= sighting.dangerLevel %></span>
-            </div>
-
-            <div class="report-detail">
-                <span class="report-detail-label">Zombie Type</span>
-                <span class="report-detail-value"><%= sighting.zombieTypes %></span>
-            </div>
-
-            <div class="report-details-actions">
-
-                <% if(user && sighting.reportOwner.equals(user._id)){ %>
-
-                    <a class="report-edit-button" href="/reports/<%= sighting._id %>/edit">
-                        Edit Report
-                    </a>
-
-                    <form method="POST" action="/reports/<%= sighting._id %>?_method=DELETE">
-                        <button class="report-delete-button" type="submit">
-                            Delete Report
-                        </button>
-                    </form>
-
-                <% } %>
-
-                <a class="report-back-button" href="/reports">
-                    Back to Reports
-                </a>
-
-            </div>
-
-        </div>
-
-    </main>
+        </main>
 
 </body>
 

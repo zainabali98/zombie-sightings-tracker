@@ -361,7 +361,8 @@ body {
     cursor: pointer;
 }
 
-.new-report-main-fields select {
+.new-report-main-fields select,
+.new-report-main-fields input[type="text"] {
     background: rgba(13, 13, 13, 0.6);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);

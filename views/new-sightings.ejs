@@ -25,64 +25,63 @@
                         <option value="Southern">Southern</option>
                     </select>
 
-                    <label for="status">Status:</label>
-                    <select name="status" id="status">
-                        <option value="Cleared/Safe">Cleared/Safe</option>
-                        <option value="Overrun">Overrun</option>
-                        <option value="Under Evaluation">Under Evaluation</option>
-                        <option value="Combat Ongoing">Combat Ongoing</option>
-                        <option value="Unknown">Unknown</option>
-                    </select>
-                    <label for="dangerLevel">Danger lvl:</label>
-                    <select name="dangerLevel" id="dangerLevel">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="Unknow">Unknown</option>
+                    <label for="specificLocation">Specific Location:</label>
+                    <input type="text" name="specificLocation" id="specificLocation"></input>
+                    
+                    <% if (user.occupation==='scientist' || user.occupation==='soldier' || user.occupation==='admin' ) { %>
 
-                    </select>
+                        <label for="dangerLevel">Danger lvl:</label>
+                        <select name="dangerLevel" id="dangerLevel">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="Unknown">Unknown</option>
 
-                    <label>Zombie Types at sight:</label>
+                        </select>
 
-                    <div class="zombie-types">
-                        <label class="zombie-checkbox">
-                            <input type="checkbox" name="zombieTypes" value="Runner">
-                            Runner
-                        </label>
+                        <% } %>
 
-                        <label class="zombie-checkbox">
-                            <input type="checkbox" name="zombieTypes" value="Stalker">
-                            Stalker
-                        </label>
+                            <label>Zombie Types at sight:</label>
 
-                        <label class="zombie-checkbox">
-                            <input type="checkbox" name="zombieTypes" value="Clicker">
-                            Clicker
-                        </label>
+                            <div class="zombie-types">
+                                <label class="zombie-checkbox">
+                                    <input type="checkbox" name="zombieTypes" value="Runner">
+                                    Runner
+                                </label>
 
-                        <label class="zombie-checkbox">
-                            <input type="checkbox" name="zombieTypes" value="Shambler">
-                            Shambler
-                        </label>
+                                <label class="zombie-checkbox">
+                                    <input type="checkbox" name="zombieTypes" value="Stalker">
+                                    Stalker
+                                </label>
 
-                        <label class="zombie-checkbox">
-                            <input type="checkbox" name="zombieTypes" value="Bloater">
-                            Bloater
-                        </label>
+                                <label class="zombie-checkbox">
+                                    <input type="checkbox" name="zombieTypes" value="Clicker">
+                                    Clicker
+                                </label>
 
-                        <label class="zombie-checkbox">
-                            <input type="checkbox" name="zombieTypes" value="Rat King">
-                            Rat King
-                        </label>
+                                <label class="zombie-checkbox">
+                                    <input type="checkbox" name="zombieTypes" value="Shambler">
+                                    Shambler
+                                </label>
 
-                        <label class="zombie-checkbox">
-                            <input type="checkbox" name="zombieTypes" value="Unknown">
-                            Unknown
-                        </label>
-                    </div>
+                                <label class="zombie-checkbox">
+                                    <input type="checkbox" name="zombieTypes" value="Bloater">
+                                    Bloater
+                                </label>
+
+                                <label class="zombie-checkbox">
+                                    <input type="checkbox" name="zombieTypes" value="Rat King">
+                                    Rat King
+                                </label>
+
+                                <label class="zombie-checkbox">
+                                    <input type="checkbox" name="zombieTypes" value="Unknown">
+                                    Unknown
+                                </label>
+                            </div>
                 </div>
                 <div class="new-report-description">
                     <label for="description">Description:</label>
@@ -90,7 +89,8 @@
                         placeholder="Describe the sighting in concise words..."></textarea>
                 </div>
                 <div class="new-report-buttons">
-<button type="submit">Submit</button>                </div>
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
 

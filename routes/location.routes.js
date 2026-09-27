@@ -28,9 +28,30 @@ router.get('/:zone', async (req, res) => {
 
     const sightings = await Sighting.find({ location: foundLocation._id })
 
+    let status = ''
+
+    if (sightings.length === 0) {
+        status = 'Safe'
+    } else {
+        const highThreatZombies = ['Shambler', 'Bloater', 'Rat King']
+
+        const hasHighThreat = sightings.some(sighting =>
+            sighting.zombieTypes.some(type =>
+                highThreatZombies.includes(type)
+            )
+        )
+
+        if (hasHighThreat) {
+            status = 'High Threat'
+        } else {
+            status = 'Minimal Threat'
+        }
+    }
+
     res.render('location-details.ejs', {
         location: foundLocation,
-        sightings: sightings
+        sightings: sightings,
+        status: status
     })
 })
 

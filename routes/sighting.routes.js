@@ -41,7 +41,7 @@ router.get('/my-reports', isSignedIn, async (req, res) => {
 
 
 router.get('/:id', async (req, res) => {
-    const foundSighting = await Sighting.findById(req.params.id)
+    const foundSighting = await Sighting.findById(req.params.id).populate('location')
     res.render('sighting-details.ejs', { sighting: foundSighting })
 })
 

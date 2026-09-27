@@ -18,6 +18,10 @@ const sightingSchema = new mongoose.Schema({
         type: String,
         enum: ['Runner', 'Stalker', 'Clicker', 'Shambler', 'Bloater', 'Rat King', 'Unknown']
     }],
+    dangerLevel: {
+    type: String,
+    enum: ['1', '2', '3', '4', '5', '6', 'Unknown']
+},
     description: {
         type: String
     }

@@ -6,9 +6,7 @@ const locationSchema = new mongoose.Schema({
         type: String,
         enum: ['Muharraq', 'Manama', 'Northern', 'Southern']
     },
-    infectionLevel: {
-        type: Number
-    },
+    
 }, { timestamps: true })
 
 

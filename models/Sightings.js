@@ -5,9 +5,10 @@ const sightingSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Location'
     },
-    status: {
+    specificLocation: {
         type: String,
-        enum: ['Cleared/Safe', 'Overrun', 'Under Evaluation', 'Combat Ongoing', 'unknown']
+        required: true,
+        trim: true
     },
     reportOwner: {
         type: mongoose.Schema.Types.ObjectId,

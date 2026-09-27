@@ -8,61 +8,103 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="new-report-page">
+
     <%- include('./partials/navbar') %>
 
-        <h1> Eedit the report carefully! </h1>
-        <Form method="post" action="/reports/<%= sighting._id %>?_method=PUT">
-            <label for="location">Zones:</label>
-            <select name="location" id="location">
-                <option value="Manama">Manama</option>
-                <option value="Muharraq">Muharraq</option>
-                <option value="Northern">Northern</option>
-                <option value="Southern">Southern</option>
-            </select>
-            <br>
-            <label for="status">Status:</label>
-            <select name="status" id="status">
-                <option value="Cleared/Safe">Cleared/Safe</option>
-                <option value="Overrun">Overrun</option>
-                <option value="Under Evaluation">Under Evaluation</option>
-                <option value="Combat Ongoing">Combat Ongoing</option>
-                <option value="Unknown">Unknown</option>
-            </select>
-            <br>
-            <label for="dangerLevel">Danger lvl:</label>
-            <select name="dangerLevel" id="dangerLevel">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="Unknown">Unknown</option>
+        <div class="new-report-content">
 
-            </select>
-            <br>
-            <label for="zombieTypes">Zombie Types at sight:</label>
-            <select name="zombieTypes" id="zombieTypes">
-                <option value="Runner">Runner</option>
-                <option value="Stalker">Stalker</option>
-                <option value="Clicker">Clicker</option>
-                <option value="Shambler">Shamblers</option>
-                <option value="Bloater">Bloater</option>
-                <option value="Rat King">Rat King</option>
-                <option value="Unknown">Unknown</option>
+            <h1 class="new-report-title">Edit the report carefully!</h1>
 
-            </select>
-            <br>
-            <br>
-            <div>
-                <% if(user && sighting.reportOwner.equals(user._id)){ %>
-                    <button name="submit">Submit</button>
-                    <%} %>
+            <form class="new-report-form" method="post" action="/reports/<%= sighting._id %>?_method=PUT">
 
-            </div>
-        </Form>
+                <div class="new-report-main-fields">
 
-</body> 
+                    <label for="location">Zones:</label>
+                    <select name="location" id="location">
+                        <option value="Manama">Manama</option>
+                        <option value="Muharraq">Muharraq</option>
+                        <option value="Northern">Northern</option>
+                        <option value="Southern">Southern</option>
+                    </select>
+
+                    <label for="specificLocation">Specific Location:</label>
+                    <input type="text" name="specificLocation" id="specificLocation"
+                        value="<%= sighting.specificLocation %>">
+
+                    <label for="dangerLevel">Danger lvl:</label>
+                    <select name="dangerLevel" id="dangerLevel">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+
+                    <label>Zombie Types at sight:</label>
+
+                    <div class="zombie-types">
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Runner">
+                            Runner
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Stalker">
+                            Stalker
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Clicker">
+                            Clicker
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Shambler">
+                            Shambler
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Bloater">
+                            Bloater
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Rat King">
+                            Rat King
+                        </label>
+
+                        <label class="zombie-checkbox">
+                            <input type="checkbox" name="zombieTypes" value="Unknown">
+                            Unknown
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="new-report-description">
+
+                    <label for="description">Description:</label>
+
+                    <textarea name="description" id="description" rows="5"
+                        placeholder="Describe the sighting in concise words..."><%= sighting.description %></textarea>
+
+                </div>
+
+                <div class="new-report-buttons">
+
+                    <% if(user && sighting.reportOwner.equals(user._id)){ %>
+                        <button type="submit">Update Report</button>
+                        <% } %>
+
+                </div>
+
+            </form>
+
+        </div>
+
+</body>
 
 </html>

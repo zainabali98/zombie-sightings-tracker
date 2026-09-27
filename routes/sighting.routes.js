@@ -55,14 +55,26 @@ router.get('/:id/edit', isSignedIn, async (req, res) => {
 
 
 router.put('/:id', isSignedIn, async (req, res) => {
-
     const sightingToUpdate = await Sighting.findById(req.params.id)
+
     if (sightingToUpdate.reportOwner.equals(req.session.user._id)) {
-        const updatedSighting = await Sighting.findByIdAndUpdate(req.params.id, req.body)
 
-        res.render('sighting-details.ejs', { sighting: updatedSighting })
-    } else { res.send('You are not authorized to update') }
+        const location = await Location.findOne({ zone: req.body.location })
+        req.body.location = location._id
 
+        const updatedSighting = await Sighting.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        )
+
+        res.render('sighting-details.ejs', {
+            sighting: updatedSighting
+        })
+
+    } else {
+        res.send('You are not authorized to update')
+    }
 })
 
 

@@ -28,7 +28,8 @@ router.post('/', isSignedIn, async (req, res) => {
     res.redirect('/reports')
 })
 
-router.get('/new', (req, res) => {
+router.get('/new',isSignedIn, (req, res) => {
+
     res.render('new-sightings.ejs')
 })
 

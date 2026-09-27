@@ -6,9 +6,32 @@ const Sighting = require('../models/Sightings')
 
 
 
-router.get('/', async (req, res)=>{
- const locations = await Location.find()
- res.render('locations.ejs', {locations: locations})
+router.get('/', async (req, res) => {
+    const locations = await Location.find()
+
+    for (let location of locations) {
+        const sightings = await Sighting.find({ location: location._id })
+
+        if (sightings.length === 0) {
+            location.status = 'Safe'
+        } else {
+            const highThreatZombies = ['Shambler', 'Bloater', 'Rat King']
+
+            const hasHighThreat = sightings.some(sighting =>
+                sighting.zombieTypes.some(type =>
+                    highThreatZombies.includes(type)
+                )
+            )
+
+            if (hasHighThreat) {
+                location.status = 'High Threat'
+            } else {
+                location.status = 'Minimal Threat'
+            }
+        }
+    }
+
+    res.render('locations.ejs', { locations: locations })
 })
 
 router.get('/seed', async (req, res) => {

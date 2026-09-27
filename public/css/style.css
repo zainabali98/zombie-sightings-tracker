@@ -1019,6 +1019,22 @@ body.all-reports-page {
 .report-details-button:active {
     transform: scale(0.98);
 }
+
+.report-back-button,
+.zone-back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
 .zone-reports-title {
     color: #ffffff;
     text-align: center;

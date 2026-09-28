@@ -185,16 +185,11 @@ body {
 
 .admin-stat-card {
     min-height: 120px;
-
     padding: 22px;
-
     box-sizing: border-box;
-
-    background: rgba(28, 28, 28, 0.94);
-
+    background: rgba(28, 28, 28, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 15px;
-
     transition: 0.2s ease;
 }
 
@@ -244,7 +239,7 @@ body {
    ========================================================= */
 
 .admin-panel {
-    background: rgba(27, 27, 27, 0.95);
+    background: rgba(27, 27, 27, 0.75);
 
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 15px;

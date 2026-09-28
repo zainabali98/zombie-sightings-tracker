@@ -83,7 +83,7 @@ router.put('/:id', isSignedIn, async (req, res) => {
 router.delete('/:id', isSignedIn, async (req, res) => {
     const sightingToDelete = await Sighting.findById(req.params.id)
 
-    if (sightingToDelete.reportOwner.equals(req.session.user._id)) {
+    if (sightingToDelete.reportOwner.equals(req.session.user._id) || req.session.user.isAdmin) {
         await Sighting.findByIdAndDelete(req.params.id)
         res.redirect('/reports')
     } else { res.send('You are not authorized to delete') }

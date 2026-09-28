@@ -52,7 +52,7 @@
 
                 <div class="report-details-actions">
 
-                    <% if(user && sighting.reportOwner.equals(user._id)){ %>
+                    <% if(user && sighting.reportOwner.equals(user._id ) || user.isAdmin){ %>
 
                         <a class="report-edit-button" href="/reports/<%= sighting._id %>/edit">
                             Edit Report

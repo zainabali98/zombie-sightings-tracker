@@ -15,12 +15,38 @@ router.get("/admin", isAdmin, async (req, res) => {
     const users = await User.find();
     const zones = await Location.find();
     const sightings = await Sighting.find();
-    const zoneSightings = zones.map(zone => ({
-    zone: zone.zone,
-    count: sightings.filter(
+   const zoneSightings = zones.map(zone => {
+
+    const zoneSightings = sightings.filter(
         sighting => sighting.location && sighting.location.equals(zone._id)
-    ).length
-}));
+    );
+
+    let status = '';
+
+    if (zoneSightings.length === 0) {
+        status = 'Safe';
+    } else {
+        const highThreatZombies = ['Shambler', 'Bloater', 'Rat King'];
+
+        const hasHighThreat = zoneSightings.some(sighting =>
+            sighting.zombieTypes.some(type =>
+                highThreatZombies.includes(type)
+            )
+        );
+
+        if (hasHighThreat) {
+            status = 'High Threat';
+        } else {
+            status = 'Minimal Threat';
+        }
+    }
+
+    return {
+        zone: zone.zone,
+        count: zoneSightings.length,
+        status: status
+    };
+});
 
     res.render("admin", {
         user,

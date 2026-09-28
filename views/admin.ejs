@@ -54,41 +54,48 @@
                                     <th>Reports</th>
                                     <th>Status</th>
                                     <th>Last Report</th>
-                                    <th>Action</th>
+                                    <th>\\\\\\\\CHANGE IT\\\\\\\\</th>
                                 </tr>
                             </thead>
 
                             <tbody>
 
-                                <tr>
-                                    <td>Manama</td>
-<td><%= zoneSightings.find(zone => zone.zone === "Manama").count %></td>
-                                    <td>...</td>
-                                    <td>—</td>
-                                    <td>...</td>
-                                </tr>
+                                <% const zoneNames=['Manama', 'Muharraq' , 'Northern' , 'Southern' ] %>
 
-                                <tr>
-                                    <td>Muharraq</td>
-<td><%= zoneSightings.find(zone => zone.zone === "Muharraq").count %></td>
-                                    <td>...</td>
-                                    <td>—</td>
-                                    <td>...</td>
-                                </tr>
+                                    <% for (let zoneName of zoneNames) { %>
 
-                                <tr>
-                                    <td>Northern</td>
-<td><%= zoneSightings.find(zone => zone.zone === "Northern").count %></td>                                    <td>...</td>
-                                    <td>—</td>
-                                    <td>...</td>
-                                </tr>
+                                        <% const zoneData=zoneSightings.find(zone=> zone.zone === zoneName) %>
 
-                                <tr>
-                                    <td>Southern</td>
-<td><%= zoneSightings.find(zone => zone.zone === "Southern").count %></td>                                    <td>...</td>
-                                    <td>—</td>
-                                    <td>...</td>
-                                </tr>
+                                            <tr>
+                                                <td>
+                                                    <%= zoneName %>
+                                                </td>
+
+                                                <td>
+                                                    <%= zoneData.count %>
+                                                </td>
+
+                                                <td>
+                                                    <span class="zone-status 
+                    <%= zoneData.status === 'High Threat' ? 'danger' : 
+                        zoneData.status === 'Minimal Threat' ? 'warning' : 'safe' %>">
+                                                        <%= zoneData.status %>
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    —
+                                                </td>
+
+                                                <td>
+                                                    <a href="/locations/<%= zoneName %>"
+                                                        class="admin-btn admin-btn-secondary">
+                                                        View
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <% } %>
 
                             </tbody>
 

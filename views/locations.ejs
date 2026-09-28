@@ -11,35 +11,43 @@
 <body class="zones">
     <%- include('./partials/navbar') %>
 
-    <h1 class="zones-title">All Zones</h1>
+        <h1 class="zones-title">All Zones</h1>
 
-    <div class="zones-content">
+        <div class="zones-content">
 
-        <div class="zone-card zones-first-card">
-            <h2 class="zone-name">Manama</h2>
-            <p>status here</p>
-            <a class="zone-button" href="/locations/Manama">Stay Informed</a>
+            <div class="zone-card zones-first-card">
+                <h2 class="zone-name">Manama</h2>
+                <p>
+                    <%= locations.find(location=> location.zone === 'Manama').status %>
+                </p>
+                <a class="zone-button" href="/locations/Manama">Stay Informed</a>
+            </div>
+
+            <div class="zone-card zones-second-card">
+                <h2 class="zone-name">Muharraq</h2>
+                <p>
+                    <%= locations.find(location=> location.zone === 'Muharraq').status %>
+                </p>
+                <a class="zone-button" href="/locations/Muharraq">Stay Informed</a>
+            </div>
+
+            <div class="zone-card zones-third-card">
+                <h2 class="zone-name">Northern</h2>
+                <p>
+                    <%= locations.find(location=> location.zone === 'Northern').status %>
+                </p>
+                <a class="zone-button" href="/locations/Northern">Stay Informed</a>
+            </div>
+
+            <div class="zone-card zones-fourth-card">
+                <h2 class="zone-name">Southern</h2>
+                <p>
+                    <%= locations.find(location=> location.zone === 'Southern').status %>
+                </p>
+                <a class="zone-button" href="/locations/Southern">Stay Informed</a>
+            </div>
+
         </div>
-
-        <div class="zone-card zones-second-card">
-            <h2 class="zone-name">Muharraq</h2>
-            <p>status here</p>
-            <a class="zone-button" href="/locations/Muharraq">Stay Informed</a>
-        </div>
-
-        <div class="zone-card zones-third-card">
-            <h2 class="zone-name">Northern</h2>
-            <p>status here</p>
-            <a class="zone-button" href="/locations/Northern">Stay Informed</a>
-        </div>
-
-        <div class="zone-card zones-fourth-card">
-            <h2 class="zone-name">Southern</h2>
-            <p>status here</p>
-            <a class="zone-button" href="/locations/Southern">Stay Informed</a>
-        </div>
-
-    </div>
 </body>
 
 </html>

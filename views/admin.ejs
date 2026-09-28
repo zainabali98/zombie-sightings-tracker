@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,117 +9,184 @@
 </head>
 
 <body>
-        <%- include('./partials/navbar') %>
+    <%- include('./partials/navbar') %>
 
 
-    <div class="admin-layout">
+        <div class="admin-layout">
 
-        <aside class="admin-sidebar">
+            <aside class="admin-sidebar">
 
-            <nav class="admin-nav">
-                <a href="/admin" class="active">🏠</a>
-                <a href="/users">👤</a>
-                <a href="/reports">📋</a>
-                <a href="/locations">📍</a>
-            </nav>
+                <nav class="admin-nav">
+                    <a href="/" class="homepage">🏠</a>
+                    <a href="/users" class="users">👤</a>
+                    <a href="/reports" class="reports">📋</a>
+                    <a href="/locations" class="zones">📍</a>
+                </nav>
 
-        </aside>
+            </aside>
 
-        <main class="admin-main">
+            <main class="admin-main">
 
-            <header class="admin-header">
+                <header class="admin-header">
 
-                <div>
-                    <h1>Admin Dashboard</h1>
-                    <p>Welcome, <%= user.username %>.</p>
-                </div>
+                    <div>
+                        <h1>Admin Dashboard</h1>
+                        <p>Welcome, <%= user.username %>.</p>
+                    </div>
 
-            </header>
+                </header>
 
-
-            <section class="admin-stats">
-
-                <div class="admin-stat-card">
-                    <div class="admin-stat-label">Total Users</div>
-                    <div class="admin-stat-value"><%= users.length %></div>
-                </div>
-
-                <div class="admin-stat-card">
-                    <div class="admin-stat-label">Total Reports</div>
-                    <div class="admin-stat-value"><%= sightings.length %></div>
-                </div>
-
-                <div class="admin-stat-card">
-                    <div class="admin-stat-label">Total Zones</div>
-                    <div class="admin-stat-value"><%= zones.length %></div>
-                </div>
-
-                <div class="admin-stat-card">
-                    <div class="admin-stat-label">Active Threats</div>
-                    <div class="admin-stat-value">5</div>
-                </div>
-
-            </section>
-
-
-            <!-- CHARTS / REPORT OVERVIEW -->
-            <section class="admin-grid">
-
-                <!-- REPORT DIAGRAM -->
-                <div class="admin-panel">
+                <!-- ONGOING COMBAT -->
+                <section class="admin-panel ongoing-combat">
 
                     <div class="admin-panel-header">
-                        <h2>Reports Overview</h2>
-                        <span>Recent Activity</span>
+                        <h2>⚔ Ongoing Combat</h2>
+                        <span>Active Zones</span>
                     </div>
 
-                    <div class="admin-chart">
-                        Report Diagram
+                    <div class="admin-table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Zone</th>
+                                    <th>Reports</th>
+                                    <th>Status</th>
+                                    <th>Last Report</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Manama</td>
+<td><%= zoneSightings.find(zone => zone.zone === "Manama").count %></td>
+                                    <td>...</td>
+                                    <td>—</td>
+                                    <td>...</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Muharraq</td>
+<td><%= zoneSightings.find(zone => zone.zone === "Muharraq").count %></td>
+                                    <td>...</td>
+                                    <td>—</td>
+                                    <td>...</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Northern</td>
+<td><%= zoneSightings.find(zone => zone.zone === "Northern").count %></td>                                    <td>...</td>
+                                    <td>—</td>
+                                    <td>...</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Southern</td>
+<td><%= zoneSightings.find(zone => zone.zone === "Southern").count %></td>                                    <td>...</td>
+                                    <td>—</td>
+                                    <td>...</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
                     </div>
 
-                </div>
+                </section>
+                <section class="admin-stats">
 
-
-                <!-- REPORT PERCENTAGES -->
-                <div class="admin-panel">
-
-                    <div class="admin-panel-header">
-                        <h2>Report Status</h2>
-                        <span>Percentage</span>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Total Users</div>
+                        <div class="admin-stat-value">
+                            <%= users.length %>
+                        </div>
                     </div>
 
-                    <div class="report-percentages">
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Total Reports</div>
+                        <div class="admin-stat-value">
+                            <%= sightings.length %>
+                        </div>
+                    </div>
 
-                        <div class="percentage-row">
-                            <span>Active</span>
-                            <strong>45%</strong>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Total Zones</div>
+                        <div class="admin-stat-value">
+                            <%= zones.length %>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-label">Active Threats</div>
+                        <div class="admin-stat-value">5</div>
+                    </div>
+
+                </section>
+
+
+                <!-- CHARTS / REPORT OVERVIEW -->
+                <section class="admin-grid">
+
+                    <!-- REPORT DIAGRAM -->
+                    <div class="admin-panel">
+
+                        <div class="admin-panel-header">
+                            <h2>Reports Overview</h2>
+                            <span>Recent Activity</span>
                         </div>
 
-                        <div class="percentage-row">
-                            <span>Pending</span>
-                            <strong>30%</strong>
-                        </div>
-
-                        <div class="percentage-row">
-                            <span>Resolved</span>
-                            <strong>15%</strong>
-                        </div>
-
-                        <div class="percentage-row">
-                            <span>Rejected</span>
-                            <strong>10%</strong>
+                        <div class="admin-chart">
+                            Report Diagram
                         </div>
 
                     </div>
 
-                </div>
 
-            </section>
+                    <!-- REPORT PERCENTAGES -->
+                    <div class="admin-panel">
 
-        </main>
+                        <div class="admin-panel-header">
+                            <h2>Report Status</h2>
+                            <span>Percentage</span>
+                        </div>
 
-    </div>
+                        <div class="report-percentages">
+
+                            <div class="percentage-row">
+                                <span>Active</span>
+                                <strong>45%</strong>
+                            </div>
+
+                            <div class="percentage-row">
+                                <span>Pending</span>
+                                <strong>30%</strong>
+                            </div>
+
+                            <div class="percentage-row">
+                                <span>Resolved</span>
+                                <strong>15%</strong>
+                            </div>
+
+                            <div class="percentage-row">
+                                <span>Rejected</span>
+                                <strong>10%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
 
 </body>
+
 </html>
 ```

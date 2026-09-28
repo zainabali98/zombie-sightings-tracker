@@ -122,9 +122,27 @@ body {
 }
 
 
-.admin-nav a.active {
+.admin-nav a.homepage {
     color: #111;
-    background: #d88a32;
+    background: #595959;
+
+    box-shadow: 0 0 15px rgba(216, 138, 50, 0.2);
+}
+.admin-nav a.users {
+    color: #111;
+    background: #595959;
+
+    box-shadow: 0 0 15px rgba(216, 138, 50, 0.2);
+}
+.admin-nav a.reports {
+    color: #111;
+    background: #595959;
+
+    box-shadow: 0 0 15px rgba(216, 138, 50, 0.2);
+}
+.admin-nav a.zones {
+    color: #111;
+    background: #595959;
 
     box-shadow: 0 0 15px rgba(216, 138, 50, 0.2);
 }
@@ -462,6 +480,17 @@ body {
 
     color: #e39a43;
 }
+
+/* ===================
+   ONGOING COMBAT
+   =================== */
+
+.ongoing-combat {
+    margin-bottom: 20px;
+}
+
+
+
 
 
 /* =========================================================

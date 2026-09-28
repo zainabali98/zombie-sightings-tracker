@@ -23,7 +23,11 @@ const userSchema = new mongoose.Schema({
   reports: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Sighting'
-  }]
+  }],
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  }
 }, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);

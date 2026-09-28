@@ -1,21 +1,34 @@
 <nav class="navbar">
     <a href="/">Homepage</a>
-    
-    <% if (user){ %>
-    <a href="/auth/sign-out">Logout</a>
-    <a href="/reports">Reports</a>
-    <a href="/reports/my-reports">My-Reports</a>
-    <a href="/locations">Locations</a>
-    <a href="/zombies">ZOMBIE-TYPES</a>
 
-    <% } else{ %>
-    <a href="/auth/sign-up">Sign up</a>
-    <a href="/auth/sign-in">Login</a>
-    <a href="/reports">Reports</a>
-    <a href="/locations">Locations</a>
-        <a href="/zombies">ZOMBIE-TYPES</a>
+    <% if (user && user.isAdmin){ %>
+        <a href="/reports">Reports</a>
+        <a href="/reports/my-reports">My-Reports</a>
+        <a href="/admin">Admin</a>
+        <a href="/locations">Locations</a>
+        <a href="/zombies">Zombies</a>
+                <a href="/auth/sign-out">Logout</a>
+
+        
+
+        <% } else if (user){ %>
+            <a href="/auth/sign-up">Sign up</a>
+            <a href="/auth/sign-in">Login</a>
+            <a href="/reports">Reports</a>
+            <a href="/reports/my-reports">My-Reports</a>
+
+            <a href="/locations">Locations</a>
+            <a href="/zombies">Zombies</a>
+
+            <% } else { %>
+
+                <a href="/auth/sign-up">Sign up</a>
+                <a href="/auth/sign-in">Login</a>
+                <a href="/reports">Reports</a>
+                <a href="/locations">Locations</a>
+                <a href="/zombies">Zombies</a>
 
 
-    <% } %>
-    
+                <% } %>
+
 </nav>

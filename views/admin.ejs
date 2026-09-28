@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧟 Admin</title>
+    <link rel="stylesheet" href="/css/admin-panel.css">
+</head>
+
+<body>
+        <%- include('./partials/navbar') %>
+
+
+    <div class="admin-layout">
+
+        <aside class="admin-sidebar">
+
+            <nav class="admin-nav">
+                <a href="/admin" class="active">🏠</a>
+                <a href="/users">👤</a>
+                <a href="/reports">📋</a>
+                <a href="/locations">📍</a>
+            </nav>
+
+        </aside>
+
+        <main class="admin-main">
+
+            <header class="admin-header">
+
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p>Welcome, <%= user.username %>.</p>
+                </div>
+
+            </header>
+
+
+            <section class="admin-stats">
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-label">Total Users</div>
+                    <div class="admin-stat-value">120</div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-label">Total Reports</div>
+                    <div class="admin-stat-value">86</div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-label">Total Zones</div>
+                    <div class="admin-stat-value">12</div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-label">Active Threats</div>
+                    <div class="admin-stat-value">5</div>
+                </div>
+
+            </section>
+
+
+            <!-- CHARTS / REPORT OVERVIEW -->
+            <section class="admin-grid">
+
+                <!-- REPORT DIAGRAM -->
+                <div class="admin-panel">
+
+                    <div class="admin-panel-header">
+                        <h2>Reports Overview</h2>
+                        <span>Recent Activity</span>
+                    </div>
+
+                    <div class="admin-chart">
+                        Report Diagram
+                    </div>
+
+                </div>
+
+
+                <!-- REPORT PERCENTAGES -->
+                <div class="admin-panel">
+
+                    <div class="admin-panel-header">
+                        <h2>Report Status</h2>
+                        <span>Percentage</span>
+                    </div>
+
+                    <div class="report-percentages">
+
+                        <div class="percentage-row">
+                            <span>Active</span>
+                            <strong>45%</strong>
+                        </div>
+
+                        <div class="percentage-row">
+                            <span>Pending</span>
+                            <strong>30%</strong>
+                        </div>
+
+                        <div class="percentage-row">
+                            <span>Resolved</span>
+                            <strong>15%</strong>
+                        </div>
+
+                        <div class="percentage-row">
+                            <span>Rejected</span>
+                            <strong>10%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
+```

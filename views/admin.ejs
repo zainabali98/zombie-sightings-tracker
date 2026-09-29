@@ -36,7 +36,6 @@
 
                 </header>
 
-                <!-- ONGOING COMBAT -->
                 <section class="admin-panel ongoing-combat">
 
                     <div class="admin-panel-header">
@@ -53,7 +52,6 @@
                                     <th>Zone</th>
                                     <th>Count</th>
                                     <th>Status</th>
-                                    <th>Last Report</th>
                                     <th>Reports</th>
                                 </tr>
                             </thead>
@@ -79,9 +77,6 @@
                                                     </span>
                                                 </td>
 
-                                                <td>
-                                                    —
-                                                </td>
 
                                                 <td>
                                                     <a href="/locations/<%= zoneName %>"
@@ -130,61 +125,6 @@
 
                 </section>
 
-
-                <!-- CHARTS / REPORT OVERVIEW -->
-                <section class="admin-grid">
-
-                    <!-- REPORT DIAGRAM -->
-                    <div class="admin-panel">
-
-                        <div class="admin-panel-header">
-                            <h2>Reports Overview</h2>
-                            <span>Recent Activity</span>
-                        </div>
-
-                        <div class="admin-chart">
-                            Report Diagram
-                        </div>
-
-                    </div>
-
-
-                    <!-- REPORT PERCENTAGES -->
-                    <div class="admin-panel">
-
-                        <div class="admin-panel-header">
-                            <h2>Report Status</h2>
-                            <span>Percentage</span>
-                        </div>
-
-                        <div class="report-percentages">
-
-                            <div class="percentage-row">
-                                <span>Active</span>
-                                <strong>45%</strong>
-                            </div>
-
-                            <div class="percentage-row">
-                                <span>Pending</span>
-                                <strong>30%</strong>
-                            </div>
-
-                            <div class="percentage-row">
-                                <span>Resolved</span>
-                                <strong>15%</strong>
-                            </div>
-
-                            <div class="percentage-row">
-                                <span>Rejected</span>
-                                <strong>10%</strong>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
             </main>
 
         </div>
@@ -192,4 +132,3 @@
 </body>
 
 </html>
-```

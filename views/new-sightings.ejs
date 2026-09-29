@@ -26,10 +26,11 @@
                     </select>
 
                     <label for="specificLocation">Specific Location:</label>
-                    <input type="text" name="specificLocation" id="specificLocation" required></input>
-                    
-                    
-                    <% if (user.occupation==='scientist' || user.occupation==='soldier' || user.occupation==='admin' ) { %>
+                    <input type="text" name="specificLocation" id="specificLocation" required>
+
+
+                    <% if (user.occupation==='scientist' || user.occupation==='soldier' || user.occupation==='admin' ) {
+                        %>
 
                         <label for="dangerLevel">Danger lvl:</label>
                         <select name="dangerLevel" id="dangerLevel" required>
@@ -95,6 +96,19 @@
             </form>
         </div>
 
+        <script>
+            const form = document.querySelector(".new-report-form");
+            const zombieTypes = document.querySelectorAll('input[name="zombieTypes"]');
+
+            form.addEventListener("submit", function (event) {
+                const selected = [...zombieTypes].some(checkbox => checkbox.checked);
+
+                if (!selected) {
+                    event.preventDefault();
+                    alert("Please select at least one zombie type.");
+                }
+            });
+        </script>
 </body>
 
 </html>

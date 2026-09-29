@@ -43,9 +43,6 @@ body {
 }
 
 
-/* =========================================================
-   LEFT SIDEBAR
-   ========================================================= */
 
 .admin-sidebar {
     width: 85px;
@@ -68,27 +65,21 @@ body {
 }
 
 
-/* Logo */
 
 .admin-logo {
     width: 45px;
     height: 45px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin-bottom: 45px;
-
     font-size: 25px;
-
     background: rgba(216, 138, 50, 0.12);
     border: 1px solid rgba(216, 138, 50, 0.25);
     border-radius: 12px;
 }
 
 
-/* Navigation */
 
 .admin-nav {
     display: flex;
@@ -100,18 +91,13 @@ body {
 .admin-nav a {
     width: 45px;
     height: 45px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #777;
     text-decoration: none;
-
     border-radius: 12px;
-
     font-size: 20px;
-
     transition: 0.2s ease;
 }
 
@@ -125,32 +111,29 @@ body {
 .admin-nav a.homepage {
     color: #111;
     background: #595959;
-
     box-shadow: 0 0 15px rgba(216, 138, 50, 0.2);
 }
+
 .admin-nav a.users {
     color: #111;
     background: #595959;
-
     box-shadow: 0 0 15px rgba(216, 138, 50, 0.2);
 }
+
 .admin-nav a.reports {
     color: #111;
     background: #595959;
-
     box-shadow: 0 0 15px rgba(216, 138, 50, 0.2);
 }
+
 .admin-nav a.zones {
     color: #111;
     background: #595959;
-
     box-shadow: 0 0 15px rgba(216, 138, 50, 0.2);
 }
 
 
-/* =========================================================
-   MAIN CONTENT
-   ========================================================= */
+
 
 .admin-main {
     margin-left: 85px;
@@ -350,82 +333,57 @@ body {
 }
 
 
-/* =========================================================
-   ONGOING COMBAT
-   ========================================================= */
-
-.ongoing-combat {
-    margin-bottom: 20px;
-}
 
 
-/* =========================================================
-   TABLE
-   ========================================================= */
+
+/* =========
+     TABLE
+   ========= */
 
 .admin-table-wrapper {
     width: 100%;
-
     overflow-x: auto;
 }
 
 
 .admin-table {
     width: 100%;
-
     border-collapse: collapse;
 }
 
-
 .admin-table th {
     padding: 12px 10px;
-
     text-align: left;
-
     color: #777;
-
     font-size: 10px;
     font-weight: 500;
-
     text-transform: uppercase;
     letter-spacing: 0.5px;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-
 .admin-table td {
     padding: 15px 10px;
-
     color: #ccc;
-
     font-size: 13px;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.045);
 }
-
 
 .admin-table tbody tr {
     transition: 0.2s ease;
 }
-
 
 .admin-table tbody tr:hover {
     background: rgba(255, 255, 255, 0.025);
 }
 
 
-/* =========================================================
-   ZONE STATUS
-   ========================================================= */
+
 
 .zone-status {
     display: inline-block;
-
     padding: 5px 9px;
-
     border-radius: 20px;
-
     font-size: 10px;
     font-weight: 600;
 }
@@ -433,127 +391,44 @@ body {
 
 .zone-status.danger {
     background: rgba(190, 65, 55, 0.15);
-
     color: #df756c;
 }
 
 
 .zone-status.warning {
     background: rgba(216, 138, 50, 0.15);
-
     color: #e39a43;
 }
 
 
 .zone-status.safe {
     background: rgba(80, 160, 90, 0.15);
-
     color: #7fc783;
 }
 
 
-/* =========================================================
-   VIEW BUTTON
-   ========================================================= */
+
 
 .admin-btn {
     display: inline-block;
-
     padding: 7px 12px;
-
     border-radius: 7px;
-
     color: #aaa;
-
     background: rgba(255, 255, 255, 0.06);
-
     text-decoration: none;
-
     font-size: 11px;
-
     transition: 0.2s ease;
 }
 
 
 .admin-btn:hover {
     background: rgba(216, 138, 50, 0.15);
-
     color: #e39a43;
 }
 
-/* ===================
-   ONGOING COMBAT
-   =================== */
+
+
 
 .ongoing-combat {
     margin-bottom: 20px;
-}
-
-
-
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1000px) {
-
-    .admin-stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .admin-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-@media (max-width: 700px) {
-
-    .admin-main {
-        padding: 25px;
-    }
-
-    .admin-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-header h1 {
-        font-size: 26px;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .admin-sidebar {
-        width: 65px;
-    }
-
-    .admin-main {
-        margin-left: 65px;
-        width: calc(100% - 65px);
-
-        padding: 20px;
-    }
-
-    .admin-sidebar {
-        padding-top: 20px;
-    }
-
-    .admin-logo,
-    .admin-nav a {
-        width: 38px;
-        height: 38px;
-    }
-
-    .admin-logo {
-        font-size: 20px;
-        margin-bottom: 30px;
-    }
-
-    .admin-nav a {
-        font-size: 17px;
-    }
 }

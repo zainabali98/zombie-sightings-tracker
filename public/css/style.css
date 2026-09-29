@@ -55,225 +55,6 @@ body {
 
 
 
-.homepage {
-    position: relative;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-        url("/images/cover3.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    overflow: hidden;
-    margin: 0%;
-}
-
-.homepage-title {
-    color: aliceblue;
-    font-size: 7rem;
-    line-height: 0.9;
-    font-weight: 300;
-    margin-bottom: 80px;
-    margin-top: 15px;
-    margin-left: 20px;
-}
-
-.homepage-description {
-    color: white;
-    margin-left: 50px;
-
-}
-
-.homepage-buttons {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 30px;
-    gap: 20px;
-    position: relative;
-    top: -60px;
-}
-
-.homepage-buttons a {
-    background: rgba(13, 13, 13, 0.7);
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    border-radius: 10px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-
-}
-
-.homepage-buttons a:hover {
-    color: maroon;
-}
-
-.homepage-content {
-    width: 90%;
-    height: 82vh;
-    margin: 30px auto 50px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-
-/* SIGN_UP PAGE */
-
-.signup-page {
-    position: relative;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-        url("/images/MoldWallpapers_9x16_003.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
-
-.signup-content {
-    width: 90%;
-    min-height: 82vh;
-    height: auto;
-    margin: 30px auto 50px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-
-.signup-title {
-    color: aliceblue;
-    font-size: 3rem;
-    font-weight: 300;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.signup-form {
-    width: 50%;
-    margin: 40px auto;
-    color: white;
-}
-
-.signup-form input {
-    background: rgba(13, 13, 13, 0.6);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-}
-
-.signup-form label {
-    color: white;
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.signup-form select {
-    background: rgba(13, 13, 13, 0.6);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-.signup-form button {
-    background: rgba(13, 13, 13, 0.7);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 12px 30px;
-    margin-top: 10px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.signup-form button:hover {
-    background: rgba(13, 13, 13, 0.9);
-    color: maroon;
-    border-color: maroon;
-}
-
-.signup-contact-title {
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.signup-contact {
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.15);
-    margin-bottom: 25px;
-    padding: 25px;
-}
-
-.signup-contact input {
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    background: rgba(13, 13, 13, 0.6);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 10px;
-}
-
-.signup-contact label {
-    display: block;
-    color: white;
-    font-size: 1rem;
-    margin-bottom: 8px;
-}
-
-.signup-account-fields {
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.15);
-    margin-bottom: 25px;
-}
-
-.signup-occupation {
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.15);
-    margin-bottom: 25px;
-}
-
-.signup-occupation label {
-    display: block;
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.signup-occupation select {
-    width: 100%;
-    box-sizing: border-box;
-}
-
 
 /* New Report Page */
 .new-report-page {
@@ -670,6 +451,7 @@ body.report-details-page {
     margin: 0 0 30px;
 }
 
+
 .report-details-card {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 28px;
@@ -738,6 +520,22 @@ body.report-details-page {
 
 .report-delete-button:hover {
     background: #d8d8d8;
+}
+
+.pdf-button{
+  width: 100%;
+    box-sizing: border-box;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    background: #f3f3f3;
+    color: #222222;
 }
 
 .report-back-button {

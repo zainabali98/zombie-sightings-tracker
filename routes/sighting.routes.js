@@ -1,8 +1,9 @@
 const router = require("express").Router()
-const { get } = require("mongoose")
-const isSignedIn = require("../../../lectures/unit-two/open-house/middleware/is-signed-in")
 const Sighting = require('../models/Sightings')
 const Location = require('../models/Locations')
+const PDFDocument = require('pdfkit')
+const { isSignedIn, isAdmin } = require("../middleware/is-signed-in")
+
 
 
 router.get('/', async (req, res) => {
@@ -41,6 +42,31 @@ router.get('/my-reports', isSignedIn, async (req, res) => {
     res.render('my-sightings.ejs', { sightings: ownerSighting })
 })
 
+
+router.get('/pdf', isAdmin, async (req, res)=> {
+    const sightings = await Sighting.find().populate('location')
+    const doc = new PDFDocument()
+    res.setHeader('Content-Type', 'application/pdf')
+res.setHeader('Content-Disposition', 'attachment; filename="zombie-reports.pdf"')
+doc.pipe(res)
+
+
+doc.fontSize(24).text('Zombie Sightings Report')
+doc.moveDown()
+
+sightings.forEach((sighting) => {
+    doc.fontSize(14).text(`Zombie Type: ${sighting.zombieTypes.join(', ')}`)
+    doc.text(`Zone: ${sighting.location.zone}`)
+    doc.text(`Specific Location: ${sighting.specificLocation}`)
+    doc.text(`Danger Level: ${sighting.dangerLevel}`)
+    doc.text(`Description: ${sighting.description}`)
+    doc.moveDown()
+})
+
+
+doc.end()
+
+})
 
 router.get('/:id', async (req, res) => {
     const foundSighting = await Sighting.findById(req.params.id).populate('location')
@@ -88,6 +114,7 @@ router.delete('/:id', isSignedIn, async (req, res) => {
         res.redirect('/reports')
     } else { res.send('You are not authorized to delete') }
 })
+
 
 
 module.exports = router;

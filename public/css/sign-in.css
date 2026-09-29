@@ -34,7 +34,7 @@ body {
     position: relative;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-        url("/images/MoldWallpapers_9x16_003.png");
+        url("/images/cover3.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -123,7 +123,7 @@ body {
     background-repeat: no-repeat;
 
     opacity: 0;
-    animation: coverPulse 7s ease-in-out infinite;
+    animation: coverPulse 1s ease-in-out infinite;
 
     z-index: 0;
     pointer-events: none;

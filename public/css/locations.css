@@ -193,7 +193,7 @@ body.zones {
     background-repeat: no-repeat;
 
     opacity: 0;
-    animation: coverPulse 7s ease-in-out infinite;
+    animation: coverPulse 4s ease-in-out infinite;
 
     z-index: 0;
     pointer-events: none;

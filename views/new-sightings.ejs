@@ -18,7 +18,7 @@
 
                 <div class="new-report-main-fields">
                     <label for="location">Zones:</label>
-                    <select name="location" id="location">
+                    <select name="location" id="location" required>
                         <option value="Manama">Manama</option>
                         <option value="Muharraq">Muharraq</option>
                         <option value="Northern">Northern</option>
@@ -32,7 +32,7 @@
                     <% if (user.occupation==='scientist' || user.occupation==='soldier' || user.occupation==='admin' ) { %>
 
                         <label for="dangerLevel">Danger lvl:</label>
-                        <select name="dangerLevel" id="dangerLevel">
+                        <select name="dangerLevel" id="dangerLevel" required>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

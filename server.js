@@ -50,13 +50,6 @@ app.use(passUserToView)
 
 
 
-
-
-
-
-
-
-
 // Routes go here
 app.use('/auth',authController)
 app.use('/',indexController)
@@ -65,6 +58,10 @@ app.use('/locations', locationRouter)
 app.use('/zombies', zombieRouter)
 
 
+
+app.use((req, res) => {
+    res.status(404).render("404.ejs");
+});
 
 
 
@@ -77,5 +74,7 @@ async function startServer() {
         console.log(`🧟 App is running on port ${PORT} 🧟` );
     });
 }
+
+
 
 startServer();

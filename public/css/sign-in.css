@@ -105,3 +105,41 @@ body {
     color: maroon;
     border-color: maroon;
 }
+
+.animated-background {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.animated-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("/images/cover3.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    animation: coverPulse 7s ease-in-out infinite;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.animated-background > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes coverPulse {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}

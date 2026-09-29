@@ -50,6 +50,19 @@ As an admin, I want to remove inappropriate or false reports so that unreliable 
 
 ## Screenshots
 
+### Homepage
+![Homepage](./public/images/homepage.png)
+
+### Admin Dashboard
+![Admin Dashboard](./public/images/admin-dashboard.png)
+
+### Zones Page
+![Zones Page](./public/images/zones-page.png)
+
+### All Reports Page
+![All Reports Page](./public/images/all-reports-page.png)
+
+
 
 
 ## Getting Started
@@ -82,9 +95,7 @@ As an admin, I want to remove inappropriate or false reports so that unreliable 
 | POST   | `/users/login`        | Log in                                     |
 | GET    | `/users/logout`       | Log out                                    |
 | GET    | `/admin`              | Admin dashboard                            |
-| GET    | `/admin/users`        | View users- future feature                 |
-| PUT    | `/admin/users/:id`    | Update user/admin status- future feature   |
-| DELETE | `/admin/users/:id`    | Soft-delete user- future feature           |
+
 
 
 
@@ -98,7 +109,16 @@ As an admin, I want to remove inappropriate or false reports so that unreliable 
 
 
 ## Future Enhancements
-- users page where admin(s) can give or revoke certain  privilages.
+- Users page where admin(s) can give or revoke certain  privilages.
+- Date and time for when reports were made-admin dashboard.
+- Diagram that shows zones' reports percentage of all reports.
+- redesign the threat lvl on the cards in the zones page.
+- Users page:
+    | GET    | `/admin/users`        | View users- future feature                 |
+    | PUT    | `/admin/users/:id`    | Update user/admin status- future feature   |
+    | DELETE | `/admin/users/:id`    | Soft-delete user- future feature           |
 
 
 ## Credits
+- mold background images (https://www.naughtydog.com).
+-  

@@ -29,9 +29,17 @@ body {
 }
  /*=========================*/
 
+.navbar,
+.zombies-page .cards {
+    position: relative;
+    z-index: 1;
+}
 
 .zombies-page {
     min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+
     background:
         linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
         url("/images/cover3.png");
@@ -40,6 +48,33 @@ body {
     background-attachment: fixed;
     color: white;
 }
+
+.zombies-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url("/images/cover3.png");
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.2;
+    animation: backgroundPulse 5s ease-in-out infinite;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
 
 .zombies-page .cards {
     width: 90%;

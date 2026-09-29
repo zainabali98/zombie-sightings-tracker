@@ -4,6 +4,59 @@ body {
     padding: 0;
 }
 
+
+/* =========================
+   HOMEPAGE
+   ========================= */
+
+.homepage {
+    position: relative;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+        url("/images/cover3.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.homepage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("/images/cover3.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    animation: coverPulse 5s ease-in-out infinite;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes coverPulse {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+
+.homepage > * {
+    position: relative;
+    z-index: 1;
+}
+
 .navbar {
     position: relative;
     width: 800px;
@@ -28,18 +81,6 @@ body {
 }
 
 
-.homepage {
-    position: relative;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-        url("/images/cover3.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    overflow: hidden;
-    margin: 0%;
-}
 
 .homepage-title {
     color: aliceblue;
@@ -51,11 +92,14 @@ body {
     margin-left: 20px;
 }
 
+
+
 .homepage-description {
     color: white;
     margin-left: 50px;
-
 }
+
+
 
 .homepage-buttons {
     display: flex;
@@ -75,12 +119,13 @@ body {
     margin-left: 5px;
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-
 }
 
 .homepage-buttons a:hover {
     color: maroon;
 }
+
+
 
 .homepage-content {
     width: 90%;

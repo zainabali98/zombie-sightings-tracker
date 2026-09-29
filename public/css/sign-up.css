@@ -4,9 +4,6 @@ body {
     padding: 0;
 }
 
-
-
-
 .signup-page {
     position: relative;
     min-height: 100vh;
@@ -18,39 +15,34 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-
-
 
 
 .signup-page::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
 
-    background-image: url("/images/MoldWallpapers_9x16_003.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0.4);
 
-    opacity: 0;
-    animation: coverPulse 2.5s ease-in-out infinite;
+    animation: dimPulse 4s ease-in-out infinite;
 
-    z-index: 0;
     pointer-events: none;
+    z-index: 0;
 }
 
 
-@keyframes coverPulse {
-    0%, 100% {
+@keyframes dimPulse {
+    0%,
+    100% {
         opacity: 0;
     }
 
     50% {
-        opacity: 0.4;
+        opacity: 1;
     }
 }
-
 
 
 .signup-page > * {

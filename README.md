@@ -4,48 +4,49 @@
 A website where civilians, soldiers and other people can report a zombie sighting and stay informed and safe. 
 
 
-
-
-
 # User Stories
 
-## Authentication
+### Authentication
 As a visitor, I want to sign up so I can create an account.
 As a user, I want to sign in and get access to protected features.
 As a user, I want to be able to sign out so I can secure my account.
 
-## Reports / Sightings
+### Reports / Sightings
 As a user, I want to submit a zombie sighting report so I can inform others about an outbreak.
 As a user, I want to view all sighting reports so I can know where zombie activity has been reported.
 As a user, I want to view a specific report so I can see its details.
 As a user, I want to edit my own report so I can correct or update information.
 As a user, I want to delete my own report so I can remove a report I no longer want displayed.
 
-## Locations
+### Locations
 As a user, I want to view known locations so I can see where reports are occurring.
 As a user, I want to view details about a location so I can understand its current situation.
 As a user, I want to create new locations when reporting a sighting in a location that doesn't already exist.
 As a user, I want to update locations when their information changes.
 
-## Zombie Information
+### Zombie Information
 As a user, I want to browse the different zombie types so I can identify the infected I encounter.
 As a user, I want to see information about each zombie type so I can understand its threat level.
 
-## Profile
-As a user, I want to manage my profile information, including my occupation and contact information.
 
-## Admin
+### Admin
 As an admin, I want to manage users so I can maintain the integrity of the system.
 As an admin, I want to remove inappropriate or false reports so that unreliable information doesn't remain on the tracker.
 
 
 
 ## Technologies Used
-* CSS
-* JavaScript
-* EJS
-* Node.js
-* Express
+- HTML — markup language
+- CSS — stylesheet language
+- JavaScript — programming language
+- Node.js — runtime environment
+- Express.js
+- MongoDB
+- Mongoose
+- EJS
+- Express Session — session middleware
+- PDFKit.
+- Render — deployment/cloud hosting platform
 
 
 ## Screenshots
@@ -66,13 +67,43 @@ As an admin, I want to remove inappropriate or false reports so that unreliable 
 
 
 ## Getting Started
+1. Clone the repository:
 
+    git clone https://github.com/zainabali98/zombie-sightings-tracker.git
 
+2. Navigate into the project folder:
+
+    cd Pro2-zombie-sightings
+
+3. Install dependencies:
+
+    npm install
+
+4. Start the application:
+
+    node server.js
+
+5. Open the application in your browser:
+
+    http://localhost:3000
 
 
 
 ## Database Design
+The application uses MongoDB with Mongoose for database management.
 
+The database contains three main models:
+
+User — stores user account information, occupation, contact details, admin status, and submitted reports.
+Location — stores the four monitored Bahrain zones.
+Sighting — stores zombie sighting reports, including zombie type, location, status, and report owner.
+
+Relationships
+A User can create multiple Sightings.
+Each Sighting belongs to one User.
+Each Sighting belongs to one Location.
+A Location can have multiple Sightings.
+User and Location references are handled using Mongoose ObjectIds.
 
 
 ## Routes
@@ -100,7 +131,7 @@ As an admin, I want to remove inappropriate or false reports so that unreliable 
 
 
 ## Features
-- download reports as a PDF.
+- download reports as a PDF using PDFKit.
 - Admin Dashboard.
 - Role management.
 - Animations.
@@ -114,9 +145,14 @@ As an admin, I want to remove inappropriate or false reports so that unreliable 
 - Diagram that shows zones' reports percentage of all reports.
 - redesign the threat lvl on the cards in the zones page.
 - Users page:
-    | GET    | `/admin/users`        | View users- future feature                 |
-    | PUT    | `/admin/users/:id`    | Update user/admin status- future feature   |
-    | DELETE | `/admin/users/:id`    | Soft-delete user- future feature           |
+
+    | GET    | `/admin/users`        | View users                |
+
+    | PUT    | `/admin/users/:id`    | Update user/admin status  |
+    
+    | DELETE | `/admin/users/:id`    | Soft-delete user          |
+
+- Profile Page: As a user, I want to manage my profile information, including my occupation and contact information.
 
 
 ## Credits

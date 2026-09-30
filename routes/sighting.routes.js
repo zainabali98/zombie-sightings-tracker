@@ -16,18 +16,15 @@ router.get('/', async (req, res) => {
 router.post('/', isSignedIn, async (req, res) => {
     req.body.reportOwner = req.session.user._id
 
-    console.log("Selected zone:", req.body.location)
-
     const location = await Location.findOne({ zone: req.body.location })
-
-    console.log("Found location:", location)
 
     req.body.location = location._id
 
-    const newSighting = await Sighting.create(req.body)
+    await Sighting.create(req.body)
 
     res.redirect('/reports')
 })
+
 
 router.get('/new', isSignedIn, (req, res) => {
     res.render('new-sightings.ejs', {
@@ -43,28 +40,28 @@ router.get('/my-reports', isSignedIn, async (req, res) => {
 })
 
 
-router.get('/pdf', isAdmin, async (req, res)=> {
+router.get('/pdf', isAdmin, async (req, res) => {
     const sightings = await Sighting.find().populate('location')
     const doc = new PDFDocument()
     res.setHeader('Content-Type', 'application/pdf')
-res.setHeader('Content-Disposition', 'attachment; filename="zombie-reports.pdf"')
-doc.pipe(res)
+    res.setHeader('Content-Disposition', 'attachment; filename="zombie-reports.pdf"')
+    doc.pipe(res)
 
 
-doc.fontSize(24).text('Zombie Sightings Report')
-doc.moveDown()
-
-sightings.forEach((sighting) => {
-    doc.fontSize(14).text(`Zombie Type: ${sighting.zombieTypes.join(', ')}`)
-    doc.text(`Zone: ${sighting.location.zone}`)
-    doc.text(`Specific Location: ${sighting.specificLocation}`)
-    doc.text(`Danger Level: ${sighting.dangerLevel}`)
-    doc.text(`Description: ${sighting.description}`)
+    doc.fontSize(24).text('Zombie Sightings Report')
     doc.moveDown()
-})
+
+    sightings.forEach((sighting) => {
+        doc.fontSize(14).text(`Zombie Type: ${sighting.zombieTypes.join(', ')}`)
+        doc.text(`Zone: ${sighting.location.zone}`)
+        doc.text(`Specific Location: ${sighting.specificLocation}`)
+        doc.text(`Danger Level: ${sighting.dangerLevel}`)
+        doc.text(`Description: ${sighting.description}`)
+        doc.moveDown()
+    })
 
 
-doc.end()
+    doc.end()
 
 })
 

@@ -1,5 +1,4 @@
 const router = require("express").Router()
-const isSignedIn = require("../../../lectures/unit-two/open-house/middleware/is-signed-in")
 const Location = require('../models/Locations')
 const Sighting = require('../models/Sightings')
 
@@ -44,6 +43,7 @@ router.get('/seed', async (req, res) => {
 
     res.send('Locations created')
 })
+
 
 router.get('/:zone', async (req, res) => {
 
